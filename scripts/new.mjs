@@ -44,4 +44,4 @@ ${style.trim()}
 </body></html>
 `
 );
-console.log(`✓ 已建立 pages/${slug}/（index.html、meta.json）\n  執行 npm run dev 後到 http://localhost:8080/${slug}/ 預覽`);
+console.log(`✓ 已建立 pages/${slug}/（index.html、meta.json）\n  執行 npm run dev 後到 http://localhost:3000/${slug}/ 預覽`);

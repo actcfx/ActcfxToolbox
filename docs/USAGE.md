@@ -6,9 +6,13 @@
 
 | 指令 | 用途 |
 |---|---|
-| `npm run dev` | 建置並在 http://localhost:8080 預覽（`PORT=3000 npm run dev` 換埠號） |
+| `npm run dev` | 建置並在 http://localhost:3000 預覽（`PORT=4000 npm run dev` 換埠號） |
 | `npm run build` | 建置到 `dist/` |
 | `npm run new <slug> [標題]` | 建立新頁面骨架 `pages/<slug>/` |
+
+## 本機留言工具
+
+`npm run dev` 預覽時，每個頁面左下角會出現「✎ 留言」按鈕（快捷鍵 Alt+C）。進入留言模式後點頁面上的元素，輸入意見後送出。留言存在 `.feedback/notes.jsonl`（不進 git），頁面上會用紅色數字標出位置。這個工具只在本機預覽時注入，不會出現在 `dist/` 或部署的網站上。
 
 ## 上架新頁面
 
