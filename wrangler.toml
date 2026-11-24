@@ -1,0 +1,15 @@
+# 只有要用 Cloudflare Pages Functions（後端 API）時才需要。
+# 本機測試 functions：npm run build && npx wrangler pages dev
+name = "actcfx-toolbox"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-11-01"
+
+# 綁 KV / D1 / R2 的範例（取消註解並填入 id）：
+# [[kv_namespaces]]
+# binding = "KV"
+# id = "<your-kv-id>"
+#
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "toolbox"
+# database_id = "<your-d1-id>"
