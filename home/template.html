@@ -10,5 +10,16 @@
 {{CARDS}}
 </div>
 </main>
-<footer><div class="in">© {{YEAR}} {{SITE_TITLE}}</div></footer>
+<footer><div class="in">© {{YEAR}} actcfx</div></footer>
+<script>
+(() => {
+    const bar = document.querySelector(".bar");
+    const h1 = document.querySelector(".hero h1");
+    if (!bar || !h1 || !("IntersectionObserver" in window)) return;
+    bar.classList.add("auto");
+    new IntersectionObserver(([e]) => {
+        bar.classList.toggle("vis", !e.isIntersecting && e.boundingClientRect.top < 0);
+    }).observe(h1);
+})();
+</script>
 </body></html>

@@ -4,6 +4,8 @@
 body{margin:0;min-height:100vh;display:flex;flex-direction:column;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI","PingFang TC","Hiragino Sans","Microsoft JhengHei","Noto Sans CJK TC",sans-serif;font-size:15px;line-height:1.5;letter-spacing:-.01em;-webkit-font-smoothing:antialiased}
 a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
 .bar{position:sticky;top:0;z-index:10;background:var(--bar);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:.5px solid var(--sep)}
+.bar.auto{position:fixed;left:0;right:0;transform:translateY(-100%);opacity:0;pointer-events:none;transition:transform .2s cubic-bezier(.2,.8,.2,1),opacity .2s}
+.bar.auto.vis{transform:none;opacity:1;pointer-events:auto}
 .bar-in{max-width:1120px;margin:auto;padding:0 22px;height:52px;display:flex;align-items:center;gap:16px}
 .bar-title{font-size:19px;font-weight:600;letter-spacing:-.02em;color:var(--ink)}.bar-title:hover{text-decoration:none}
 .grow{flex:1}
@@ -21,9 +23,9 @@ h1{margin:0;font-family:"SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe
 .card h2{margin:0;font-size:24px;font-weight:700;letter-spacing:-.02em;line-height:1.2}
 .card p{margin:8px 0 0;font-size:15px;color:var(--ink2);line-height:1.55}
 .card-foot{margin-top:auto;padding-top:20px;display:flex;align-items:baseline;font-size:13px}
-.date{color:var(--ink3);font-variant-numeric:tabular-nums}
-.go{color:var(--blue);font-weight:500}
-.card:hover .go{text-decoration:underline}
+.go{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--blue);color:#fff;transition:opacity .25s,transform .3s cubic-bezier(.3,.7,.2,1)}
+.go svg{width:16px;height:16px}
+@media (hover:hover){.go{opacity:0;transform:translateX(-8px) scale(.9)}.card:hover .go,.card:focus-visible .go{opacity:1;transform:none}}
 .empty{padding:48px;text-align:center;color:var(--ink3);background:var(--card);border-radius:18px}
 footer{max-width:1120px;width:100%;margin:auto;padding:0 22px 40px;font-size:12px;color:var(--ink3)}
 footer .in{border-top:.5px solid var(--sep);padding-top:16px}

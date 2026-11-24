@@ -38,7 +38,7 @@ function card(p) {
 ${tags ? `<div class="tags">${tags}</div>` : ""}
 <h2>${esc(p.title)}</h2>
 ${p.description ? `<p>${esc(p.description)}</p>` : ""}
-<div class="card-foot"><span class="date">${esc(p.date)}</span><span class="grow"></span><span class="go">打開 ›</span></div>
+<div class="card-foot"><span class="grow"></span><span class="go" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
 </a>`;
 }
 
