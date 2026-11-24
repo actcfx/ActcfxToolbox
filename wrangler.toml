@@ -1,6 +1,6 @@
 # 只有要用 Cloudflare Pages Functions（後端 API）時才需要。
 # 本機測試 functions：npm run build && npx wrangler pages dev
-name = "actcfx-toolbox"
+name = "actcfxtoolbox"
 pages_build_output_dir = "dist"
 compatibility_date = "2026-11-01"
 
