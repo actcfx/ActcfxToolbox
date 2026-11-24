@@ -33,25 +33,26 @@
 **修改頁面**：直接改 `pages/<slug>/index.html`，然後 push。
 **修改首頁**：網站名稱與副標在 `site.json`；版面在 `home/template.html`；樣式在 `home/style.css`（首頁和 404 共用）。
 
-## Cloudflare Pages 設定（一次性）
+## Cloudflare 部署設定（一次性）
 
 1. 把這個 repo 推到 GitHub。
-2. Cloudflare 後台 → Workers & Pages → Create → Pages → Connect to Git，選這個 repo。
-3. Build command：`node scripts/build.mjs`；Build output directory：`dist`。
-4. 部署完成後，到 Custom domains 綁定自己的網域。
+2. Cloudflare 後台 → Workers & Pages → Create → Import a repository，選這個 repo。
+3. Build command：`npm run build`；Deploy command：`npx wrangler deploy`（預設值）。
+4. 部署完成後，到 Settings → Domains & Routes 綁定自己的網域。
 
-產出的 `dist/` 是純靜態檔案，要換到 GitHub Pages、Netlify 或自己的主機都能直接用。
+靜態檔案的設定在 `wrangler.toml` 的 `[assets]`。產出的 `dist/` 是純靜態檔案，要換到 GitHub Pages、Netlify 或自己的主機都能直接用。
 
 ## 加後端 API（選用）
 
-Cloudflare Pages Functions：在 `functions/` 放 JS 檔就會變成 API，路徑對應網址。
+用同一個 Worker 處理 API，其他網址照常回傳靜態檔案。
 
-- `functions/<slug>/api/hello.js` → `/<slug>/api/hello`
-- 範例：`functions/_example/api/hello.js.example`（複製到正確位置並改掉 `.example` 副檔名）
-- 需要儲存資料時，可以在 `wrangler.toml` 或 Cloudflare 後台綁定 KV、D1（SQLite）或 R2（檔案），在程式中用 `env.KV`、`env.DB` 存取。
-- 本機測試 functions：`npm run build && npx wrangler pages dev`（一般預覽用 `npm run dev` 就夠了）。
+1. 把 `worker/index.js.example` 改名為 `worker/index.js`，在裡面寫 API。
+2. 在 `wrangler.toml` 打開 `main`、`binding = "ASSETS"`、`run_worker_first = ["/*/api/*"]`。
+3. 慣例：每個頁面的 API 放在 `/<slug>/api/*`。
+4. 需要儲存資料時，在 `wrangler.toml` 綁定 KV、D1（SQLite）或 R2（檔案），程式中用 `env.KV`、`env.DB` 存取。
+5. 本機測試：`npm run build && npx wrangler dev`（只看靜態頁面用 `npm run dev` 就夠了）。
 
-文件：https://developers.cloudflare.com/pages/functions/
+文件：https://developers.cloudflare.com/workers/static-assets/
 
 ## 結構
 
@@ -60,6 +61,7 @@ pages/<slug>/index.html   各頁面（原封不動複製到 dist/<slug>/）
 pages/<slug>/meta.json    首頁卡片資訊
 home/                     首頁模板、404、共用樣式
 site.json                 網站名稱與副標
-functions/                （選用）後端 API
+worker/                   （選用）後端 API
+wrangler.toml             Cloudflare 部署設定
 scripts/                  build / new / serve
 ```

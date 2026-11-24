@@ -1,10 +1,18 @@
-# 只有要用 Cloudflare Pages Functions（後端 API）時才需要。
-# 本機測試 functions：npm run build && npx wrangler pages dev
+# Cloudflare Workers（靜態網站）設定
+# 部署：Cloudflare 的 Build command 跑 `npm run build`，Deploy command 跑 `npx wrangler deploy`
 name = "actcfxtoolbox"
-pages_build_output_dir = "dist"
 compatibility_date = "2026-11-01"
 
-# 綁 KV / D1 / R2 的範例（取消註解並填入 id）：
+[assets]
+directory = "./dist"
+not_found_handling = "404-page"
+
+# ── 需要後端 API 時才打開（見 docs/USAGE.md）──
+# main = "worker/index.js"
+# [assets]  ← 上面那段 [assets] 再加這兩行：
+# binding = "ASSETS"
+# run_worker_first = ["/*/api/*"]
+#
 # [[kv_namespaces]]
 # binding = "KV"
 # id = "<your-kv-id>"

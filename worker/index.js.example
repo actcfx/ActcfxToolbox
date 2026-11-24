@@ -1,0 +1,18 @@
+// 後端 API 範例。啟用方式：
+// 1. 把這個檔案改名為 worker/index.js
+// 2. 在 wrangler.toml 打開 main、binding、run_worker_first 那幾行
+// 之後 /<slug>/api/* 的請求會先進到這裡，其他網址照常回傳靜態檔案。
+
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
+    const [, slug, , ...rest] = url.pathname.split("/"); // /<slug>/api/<rest>
+
+    if (slug === "jp-verbs" && rest[0] === "hello") {
+      return Response.json({ hello: "world", time: new Date().toISOString() });
+    }
+
+    // 沒有對應的 API → 交回靜態檔案
+    return env.ASSETS.fetch(request);
+  },
+};

@@ -13,4 +13,4 @@
 
 - 每個頁面都是獨立的單檔 HTML，不依賴任何前端框架。
 - 首頁由一支無依賴的 Node 腳本，依各頁面的 `meta.json` 自動產生。
-- 部署在 Cloudflare Pages。
+- 部署在 Cloudflare Workers（靜態資源）。
