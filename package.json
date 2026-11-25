@@ -1,10 +1,22 @@
 {
-  "name": "actcfx-toolbox",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "node scripts/build.mjs",
-    "dev": "node scripts/build.mjs && node scripts/serve.mjs",
-    "new": "node scripts/new.mjs"
-  }
+    "name": "actcfx-toolbox",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview --port 3000",
+        "new": "node scripts/new.mjs",
+        "astro": "astro",
+        "og": "node scripts/og.mjs"
+    },
+    "dependencies": {
+        "@astrojs/svelte": "^9.1.6",
+        "@fontsource-variable/m-plus-2": "^5.3.1",
+        "astro": "^7.4.13",
+        "svelte": "^5.59.1"
+    },
+    "devDependencies": {
+        "playwright": "^1.65.1"
+    }
 }

@@ -1,0 +1,46 @@
+---
+// Home page: one card for every page that has src/pages/<slug>/_meta.json
+import Site from "../layouts/Site.astro";
+import site from "../../site.json";
+
+interface Meta {
+    title: string;
+    description?: string;
+    date?: string;
+    tags?: string[];
+    hidden?: boolean;
+}
+
+const metas = import.meta.glob<Meta>("./*/_meta.json", { eager: true, import: "default" });
+const pages = Object.entries(metas)
+    .map(([path, meta]) => ({ slug: path.split("/")[1], ...meta }))
+    .filter((p) => !p.slug.startsWith("_") && !p.hidden)
+    .sort((a, b) => String(b.date ?? "").localeCompare(String(a.date ?? "")) || a.title.localeCompare(b.title));
+const year = new Date().getFullYear();
+---
+<Site description={site.subtitle} autoBar>
+    <span class="bar-meta" slot="bar">{pages.length} 個頁面</span>
+    <section class="hero">
+        <h1>{site.title}</h1>
+        <p class="sub">{site.subtitle}</p>
+    </section>
+    <div class="grid">
+        {pages.length === 0 && (
+            <div class="empty">還沒有頁面。用 <code>npm run new &lt;slug&gt;</code> 建立第一個。</div>
+        )}
+        {pages.map((p) => (
+            <a class="card" href={`/${p.slug}/`}>
+                {p.tags?.length ? <div class="tags">{p.tags.map((t) => <span class="tag">{t}</span>)}</div> : null}
+                <h2>{p.title}</h2>
+                {p.description && <p>{p.description}</p>}
+                <div class="card-foot">
+                    <span class="grow"></span>
+                    <span class="go" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4" /></svg>
+                    </span>
+                </div>
+            </a>
+        ))}
+    </div>
+    <footer slot="footer"><div class="in">© {year} actcfx</div></footer>
+</Site>

@@ -1,0 +1,51 @@
+---
+// Shared shell for the home page and the 404 page.
+import site from "../../site.json";
+import PageMeta from "../components/PageMeta.astro";
+import "@fontsource-variable/m-plus-2";
+import "../styles/home.css";
+
+interface Props {
+    title?: string;
+    description?: string;
+    autoBar?: boolean;
+    image?: string;
+}
+
+const { title, description, autoBar = false, image } = Astro.props;
+const pageTitle = title ? `${title} · ${site.title}` : site.title;
+---
+<!doctype html>
+<html lang={site.lang || "zh-Hant"}>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{pageTitle}</title>
+        <PageMeta title={pageTitle} description={description} image={image} />
+    </head>
+    <body>
+        <header class="bar" data-auto={autoBar ? "" : undefined}>
+            <div class="bar-in">
+                <a class="bar-title" href="/">{site.title}</a>
+                <span class="grow"></span>
+                <slot name="bar" />
+            </div>
+        </header>
+        <main>
+            <slot />
+        </main>
+        <slot name="footer" />
+        {import.meta.env.DEV && <script is:inline src="/__feedback.js"></script>}
+        <script>
+            // Hide the top bar until the hero title has scrolled out of view
+            const bar = document.querySelector<HTMLElement>(".bar[data-auto]");
+            const h1 = document.querySelector(".hero h1");
+            if (bar && h1 && "IntersectionObserver" in window) {
+                bar.classList.add("auto");
+                new IntersectionObserver(([e]) => {
+                    bar.classList.toggle("vis", !e.isIntersecting && e.boundingClientRect.top < 0);
+                }).observe(h1);
+            }
+        </script>
+    </body>
+</html>

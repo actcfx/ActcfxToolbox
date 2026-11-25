@@ -1,0 +1,30 @@
+---
+// Tags for <head>: icons and link previews (Open Graph, X/Twitter).
+// Previews need full URLs, so set `site` in astro.config.mjs to the real domain.
+import site from "../../site.json";
+
+interface Props {
+    title: string;
+    description?: string;
+    image?: string;
+}
+
+const { title, description = site.subtitle, image = "/og/site.png" } = Astro.props;
+const abs = (path: string) => (Astro.site ? new URL(path, Astro.site).href : path);
+const url = abs(Astro.url.pathname);
+---
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+{description && <meta name="description" content={description} />}
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={site.title} />
+<meta property="og:title" content={title} />
+{description && <meta property="og:description" content={description} />}
+<meta property="og:url" content={url} />
+<meta property="og:image" content={abs(image)} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="zh_TW" />
+<meta name="twitter:card" content="summary_large_image" />
