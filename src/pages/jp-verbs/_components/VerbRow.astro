@@ -1,0 +1,40 @@
+---
+// One table row: an original verb, or a comparison row under it.
+// Text fields hold small HTML fragments (furigana, definition lists).
+import Icon from "./Icon.astro";
+import type { Row } from "../_types";
+
+interface Props {
+    row: Row;
+}
+
+const { row } = Astro.props;
+const meta = `第${row.group}類<span class="dot">·</span>${row.vt}`;
+---
+{row.type === "original" ? (
+    <tr id={row.id} class="original" data-word-id={row.word}>
+        <td class="dic" lang="ja">
+            {row.kids > 0 && (
+                <button class="disc" type="button" aria-expanded="true" aria-label="收起或展開相關詞"><Icon name="chevron" /></button>
+            )}<Fragment set:html={row.dic} />
+        </td>
+        <td class="les">{row.kids > 0 && <button class="disc-n" type="button" tabindex="-1">{row.kids} 個對照</button>}</td>
+        <td class="masu" lang="ja" set:html={row.masu} />
+        <td class="te" lang="ja" set:html={row.te} />
+        <td class="meta" set:html={meta} />
+        <td class="note" set:html={row.note} />
+    </tr>
+) : (
+    <tr id={row.id} class={`comparison comparison-${row.kind}`} data-word-id={row.word} data-parent={row.parent}>
+        <td class="dic" lang="ja"><div class="cw" set:html={row.dic} /></td>
+        <td class="les">
+            <div class="cw">
+                <span class={row.kind === "pair" ? "tag pair" : "tag"}>{row.kind === "pair" ? "自他配對" : "相關詞"}</span><a href={`#v${row.word}`}>{row.lesson}課</a>
+            </div>
+        </td>
+        <td class="masu" lang="ja"><div class="cw" set:html={row.masu} /></td>
+        <td class="te" lang="ja"><div class="cw" set:html={row.te} /></td>
+        <td class="meta"><div class="cw" set:html={meta} /></td>
+        <td class="note">{row.note && <div class="cw" set:html={row.note} />}</td>
+    </tr>
+)}

@@ -1,0 +1,102 @@
+---
+// 日語動詞整理: the table is built from src/data/jp-verbs.json at build time.
+import Icon from "./_components/Icon.astro";
+import PageMeta from "../../components/PageMeta.astro";
+import Lesson from "./_components/Lesson.astro";
+import meta from "./_meta.json";
+import raw from "../../data/jp-verbs.json";
+import type { VerbData } from "./_types";
+import headTheme from "./_scripts/_head-theme.js?raw";
+import headLayout from "./_scripts/_head-layout.js?raw";
+import "@fontsource-variable/m-plus-2";
+import "./_jp-verbs.css";
+
+const data = raw as VerbData;
+const verbs = data.sections.reduce((n, s) => n + s.lessons.reduce((m, l) => m + l.rows.filter((r) => r.type === "original").length, 0), 0);
+const lessonCount = new Set(data.sections.flatMap((s) => s.lessons.map((l) => l.n))).size;
+---
+<!doctype html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{meta.title}</title>
+        <PageMeta title={meta.title} description={meta.description} image="/og/jp-verbs.png" />
+        <!-- These two run before the first paint: saved theme, and the layout class for this width -->
+        <script is:inline set:html={headTheme} />
+        <script is:inline set:html={headLayout} />
+    </head>
+    <body>
+        <header class="bar">
+            <div class="bar-in">
+                <a class="home" href="/" aria-label="回到首頁"><Icon name="home" /></a>
+                <a class="bar-title" href="#top">{meta.title}</a>
+                <span class="ctx" aria-live="polite"><span class="ctx-sec"></span><span class="ctx-les"></span></span>
+                <span class="grow"></span>
+                <button class="foldall" type="button" aria-checked="true" title="顯示或收起每個詞底下的對照詞"><Icon name="fold" /><span class="fl">收起全部對照</span></button>
+                <button class="theme" type="button" aria-label="切換深色／淺色"><Icon name="sun" /><Icon name="moon" /></button>
+            </div>
+        </header>
+        <main>
+            <section class="hero" id="top">
+                <div class="tools">
+                    <a class="home" href="/" aria-label="回到首頁"><Icon name="home" /></a>
+                    <button class="foldall" type="button" aria-checked="true" title="顯示或收起每個詞底下的對照詞"><Icon name="fold" /><span class="fl">收起全部對照</span></button>
+                    <button class="theme" type="button" aria-label="切換深色／淺色"><Icon name="sun" /><Icon name="moon" /></button>
+                </div>
+                <h1>{meta.title}</h1>
+                <p class="sub">大家的日本語動詞整理，共 {lessonCount} 課，{verbs} 個動詞，附自他配對與相關詞對照。</p>
+            </section>
+            <div class="info">
+                <details>
+                    <summary>使用說明</summary>
+                    <ul>{data.usage.map((li) => <li set:html={li} />)}</ul>
+                </details>
+                <details>
+                    <summary>參考資料</summary>
+                    <ul class="refs">{data.refs.map((li) => <li set:html={li} />)}</ul>
+                </details>
+            </div>
+            <nav class="idx" aria-label="課次索引">
+                {data.sections.map((s) => (
+                    <div class="grp" data-sec={s.id}>
+                        <span class="grp-l">{s.label}</span>
+                        <div class="ticks">{s.lessons.map((l) => <a href={`#${s.id}-${l.n}`}>{l.n}</a>)}</div>
+                    </div>
+                ))}
+            </nav>
+            <div class="sheet" hidden>
+                <div class="sheet-bg"></div>
+                <div class="sheet-in" role="dialog" aria-label="課次總覽">
+                    <div class="grab"></div>
+                    <div class="sh-head">
+                        <h4>課次總覽</h4>
+                        <nav class="sh-tabs">{data.sections.map((s) => <button type="button" data-sec={s.id}>{s.label}</button>)}</nav>
+                        <button class="sh-x" type="button" aria-label="關閉"><Icon name="close" /></button>
+                    </div>
+                    <div class="sh-sum"></div>
+                    <div class="sh-body">{data.sections.map((s) => <div class="sh-list" data-sec={s.id}></div>)}</div>
+                </div>
+            </div>
+            <div class="peek" aria-hidden="true"><div class="pk-t"></div><div class="pk-s"></div><div class="pk-b" lang="ja"></div></div>
+            {data.sections.map((s) => (
+                <div class="sec" id={s.id}>
+                    <div class="sec-head">
+                        <h2>{s.name}</h2>
+                        <nav class="jump">{s.lessons.map((l) => <a href={`#${s.id}-${l.n}`}>{l.n}</a>)}</nav>
+                    </div>
+                    {s.lessons.map((l) => <Lesson section={s.id} lesson={l} />)}
+                </div>
+            ))}
+        </main>
+        {import.meta.env.DEV && <script is:inline src="/__feedback.js"></script>}
+        <script>
+            import "./_scripts/_resize.js";
+            import "./_scripts/_main.js";
+            import "./_scripts/_layout.js";
+            import "./_scripts/_ui.js";
+            import "./_scripts/_restore.js";
+            import "./_scripts/_cursor.js";
+        </script>
+    </body>
+</html>
