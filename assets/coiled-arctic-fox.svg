@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-labelledby="title desc">
+    <title id="title">盤著睡覺的北極狐</title>
+    <desc id="desc">一隻白色北極狐把身體盤成一圈，蓬鬆的尾巴繞過身前，閉著眼睛把頭靠在尾巴上睡覺。</desc>
+    <defs>
+        <radialGradient id="bg" cx=".5" cy=".42" r=".6">
+            <stop offset="0" stop-color="#eaf3fb"/>
+            <stop offset="1" stop-color="#bfd6ea"/>
+        </radialGradient>
+        <linearGradient id="fur" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset=".6" stop-color="#f3f6fa"/>
+            <stop offset="1" stop-color="#d6e1ec"/>
+        </linearGradient>
+        <linearGradient id="tail" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#dfe8f1"/>
+        </linearGradient>
+    </defs>
+
+    <!-- Background and snow ground -->
+    <circle cx="200" cy="200" r="190" fill="url(#bg)"/>
+    <ellipse cx="205" cy="338" rx="150" ry="20" fill="#a9c3da" opacity=".7"/>
+    <g fill="#ffffff" opacity=".9">
+        <circle cx="78" cy="96" r="4"/>
+        <circle cx="120" cy="62" r="2.5"/>
+        <circle cx="300" cy="70" r="3.5"/>
+        <circle cx="338" cy="118" r="2.5"/>
+        <circle cx="60" cy="170" r="2.5"/>
+        <circle cx="250" cy="48" r="2"/>
+    </g>
+
+    <g stroke="#34465a" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+        <!-- Body: a round mound -->
+        <path d="M72 292 C58 210 124 146 210 144 C292 142 350 198 344 272 C341 318 296 336 212 337 C130 338 78 326 72 292 Z" fill="url(#fur)"/>
+
+        <!-- Hind leg (haunch) -->
+        <path d="M104 286 C100 232 140 196 186 204 C214 209 228 232 222 258" fill="none" stroke-width="3"/>
+        <path d="M126 268 C134 240 160 226 184 232" fill="none" stroke="#c3d2e0" stroke-width="5"/>
+
+        <!-- Back fur highlight and shading -->
+        <path d="M150 168 C190 150 250 150 290 172" fill="none" stroke="#ffffff" stroke-width="8"/>
+        <path d="M316 214 C332 240 334 268 324 292" fill="none" stroke="#cfdbe7" stroke-width="7"/>
+
+        <!-- Tail: wraps from the back, around the front, tip curls up beside the head -->
+        <path d="M104 272
+                 C90 262 72 270 70 292
+                 C68 330 100 350 150 353
+                 C216 360 294 354 334 330
+                 C358 314 372 290 364 262
+                 L357 271 L352 258 L347 270
+                 C344 284 336 296 322 302
+                 C294 314 240 318 176 310
+                 C132 304 110 292 104 272
+                 Z" fill="url(#tail)"/>
+        <path d="M120 332 C150 340 196 342 236 338" fill="none" stroke="#cfdbe7" stroke-width="5"/>
+        <path d="M252 332 C284 328 312 318 332 300" fill="none" stroke="#cfdbe7" stroke-width="5"/>
+
+        <!-- Ears: short and round, like an arctic fox (drawn behind the head) -->
+        <path d="M250 214 C248 186 258 166 276 158 C292 172 296 194 290 212 Z" fill="#ffffff"/>
+        <path d="M260 206 C260 188 266 176 275 170 C284 182 286 196 282 208 Z" fill="#f4c9cf" stroke="none"/>
+        <path d="M284 208 C290 184 304 170 322 168 C328 186 324 206 312 218 Z" fill="#ffffff"/>
+        <path d="M292 206 C298 190 306 182 316 178 C318 192 314 204 306 212 Z" fill="#f4c9cf" stroke="none"/>
+
+        <!-- Head resting on the tail, short muzzle pointing left -->
+        <path d="M318 238
+                 C320 204 296 188 268 190
+                 C244 192 230 206 224 222
+                 C216 240 204 254 196 264
+                 C188 276 194 290 208 291
+                 C234 294 262 294 284 288
+                 C306 282 316 262 318 238 Z" fill="url(#fur)"/>
+
+        <!-- Cheek ruff -->
+        <path d="M304 264 C296 278 284 284 268 287" fill="none" stroke="#cfdbe7" stroke-width="5"/>
+
+        <!-- Closed eye -->
+        <path d="M238 236 C246 244 258 244 266 236" fill="none" stroke-width="3.5"/>
+        <path d="M242 242 l-3 5 M252 245 l0 5 M261 242 l3 5" fill="none" stroke-width="2"/>
+
+        <!-- Nose and mouth -->
+        <ellipse cx="198" cy="270" rx="7.5" ry="6" fill="#2b3442" stroke="none"/>
+        <circle cx="195" cy="268" r="2" fill="#ffffff" stroke="none" opacity=".8"/>
+        <path d="M206 284 C214 287 222 286 230 281" fill="none" stroke-width="2.5"/>
+
+        <!-- Blush -->
+        <ellipse cx="274" cy="260" rx="12" ry="7" fill="#f6b8c2" stroke="none" opacity=".55"/>
+    </g>
+
+    <!-- Sleep marks -->
+    <g fill="none" stroke="#6f8aa6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M112 150 h14 l-14 16 h14"/>
+        <path d="M140 118 h10 l-10 12 h10"/>
+    </g>
+</svg>

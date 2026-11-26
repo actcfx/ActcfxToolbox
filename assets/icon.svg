@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 138 138" role="img" aria-labelledby="fox-title">
+  <title id="fox-title">北極狐</title>
+  <defs>
+    <path id="head" d="M3 10Q3 6 7 7Q24 11 45 30Q64 27 83 30Q104 11 121 7Q125 6 125 10Q126 34 113 56L118 66L112 67Q121 77 123 89Q115 85 109 85L116 97Q101 90 93 95C86 99 84 111 74 116Q64 122 54 116C44 111 42 99 35 95Q27 90 12 97L19 85Q13 85 5 89Q7 77 16 67L10 66L15 56Q2 34 3 10Z"/>
+    <clipPath id="fur-edge"><use href="#head"/></clipPath>
+  </defs>
+  <use href="#head" fill="#f8fbff"/>
+  <g clip-path="url(#fur-edge)">
+    <path d="M12 19Q25 24 33 33Q25 38 20 45Q15 34 12 19ZM116 19Q103 24 95 33Q103 38 108 45Q113 34 116 19Z" fill="#c9d2df"/>
+    <path d="M1 85Q17 72 32 75C47 77 48 94 56 100Q64 107 72 100C80 94 81 77 96 75Q111 72 127 85V124H1Z" fill="#d7e6ee"/>
+  </g>
+  <use href="#head" fill="none" stroke="#899fb3" stroke-width="2.5" stroke-linejoin="round"/>
+  <g fill="#26323e">
+    <rect x="40" y="54" width="10.5" height="16" rx="5.2"/>
+    <rect x="77.5" y="54" width="10.5" height="16" rx="5.2"/>
+    <path d="M55 97Q64 96 73 97C77 98 74 102 71 106Q67 112 64 112Q61 112 57 106C54 102 51 98 55 97Z"/>
+  </g>
+</svg>

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-labelledby="title desc">
+  <title id="title">月下蜷睡的北極狐</title>
+  <desc id="desc">極夜的星空下，一隻白色北極狐閉著眼，鼻尖依偎在繞過身前的蓬鬆長尾上。</desc>
+  <defs>
+    <clipPath id="sky"><circle cx="300" cy="298" r="255"/></clipPath>
+    <linearGradient id="night" x2=".38" y2="1" gradientUnits="objectBoundingBox">
+      <stop stop-color="#142e43"/><stop offset="1" stop-color="#37676e"/>
+    </linearGradient>
+    <linearGradient id="coat" x1=".5" y1="0" x2=".3" y2="1">
+      <stop stop-color="#fff8e7"/><stop offset=".55" stop-color="#f0eddf"/><stop offset="1" stop-color="#b6ceca"/>
+    </linearGradient>
+    <linearGradient id="brush" x1=".65" y1=".1" x2=".4" y2=".98">
+      <stop stop-color="#fff9e8"/><stop offset=".56" stop-color="#f2efde"/><stop offset="1" stop-color="#c2d6cf"/>
+    </linearGradient>
+    <path id="star" d="M0-5Q.6-.8 4 0Q.7.8 0 5Q-.7.8-4 0Q-.7-.8 0-5Z"/>
+  </defs>
+  <g clip-path="url(#sky)">
+    <circle cx="300" cy="298" r="255" fill="url(#night)"/>
+    <g fill="#f8deb2">
+      <path d="M208 96a22 22 0 1 0 26 31c-19 6-35-12-26-31Z"/>
+      <use href="#star" transform="translate(305 93)"/><use href="#star" transform="translate(389 121) scale(.8)"/>
+      <use href="#star" transform="translate(115 237) scale(.7)"/><use href="#star" transform="translate(448 185)"/>
+      <use href="#star" transform="translate(161 161) scale(.55)"/>
+    </g>
+    <g fill="#c9e0d9">
+      <circle cx="252" cy="87" r="1.2"/><circle cx="283" cy="139" r="1.5"/><circle cx="349" cy="122" r="1"/>
+      <circle cx="379" cy="151" r="1.4"/><circle cx="416" cy="141" r="1"/><circle cx="123" cy="192" r="1.5"/>
+      <circle cx="189" cy="185" r="1"/><circle cx="476" cy="205" r="1.3"/><circle cx="490" cy="237" r="1"/>
+    </g>
+    <path d="m28 356 72-58 17 8 40-36 72 64 169-35 44 4 42-43 23 15 18-10 53 60v127H28Z" fill="#487279"/>
+    <path d="m61 333 39-35 17 8 40-36-38 45-19-9Z M449 296l35-36 23 15-21-7-13 17 3-9Z" fill="#719293"/>
+    <path d="M30 376q95-45 242-10t292-20v210H30Z" fill="#88a8a7"/>
+    <path d="M31 398q106-42 249-8t291-17v192H31Z" fill="#b4c9be"/>
+    <path d="M54 424q65-29 137-20-63-2-117 24Zm372 15q54-20 109-21-37 5-67 16Z" fill="#d3dbcb"/>
+    <ellipse cx="300" cy="437" rx="180" ry="24" fill="#789793"/>
+    <path d="M152 457q61 13 117 10-58 8-117-10Zm186 18q52-8 83-20-29 18-83 20Z" fill="#91aca3"/>
+    <!-- The rounded back and haunch. -->
+    <path d="M127 345c-5-38 12-78 45-107 20-17 45-29 67-38l-6 1c37-26 87-34 133-23 76 17 127 85 126 152 0 59-47 99-122 109-103 14-226-5-243-94Z" fill="url(#coat)" stroke="#304d50" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M281 202c38-23 92-19 127 2-38-16-81-16-112 0l7-7Z" fill="#fffbed"/>
+    <path d="M454 267c23 26 27 55 19 81-5 18-24 33-47 43 22-22 27-43 26-59l-7 9c9-23 9-40 5-55l7 8Z" fill="#c1d1c8"/>
+    <!-- Short tapered strokes follow the grain of the winter coat. -->
+    <g fill="#aabfb6">
+      <path d="M349 205q17 0 29 9-14-6-29-9Zm22 10q12 2 21 9-13-5-21-9Zm28 4q20 8 31 25-16-17-31-25Zm-4 9q11 4 19 14-11-8-19-14Z"/>
+      <path d="M434 263q10 9 14 24-7-14-14-24Zm-3 9q8 10 8 19-5-12-8-19Zm-79 42q18-8 34-6-19 1-34 6Zm20 2q12-5 24-4-13 2-24 4Z"/>
+    </g>
+    <!-- Far ear, then the head turned toward the plume. -->
+    <path d="M152 281c-13-11-15-40-10-58 2-6 6-7 12-4 18 10 30 27 35 48Z" fill="#e6e7d8" stroke="#304d50" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M151 258q-5-13-4-28 13 9 21 24Z" fill="#bdaba6"/>
+    <path d="M128 310c4-29 25-57 58-68 10-4 20-6 31-6 6-15 19-38 34-44 5-2 8 0 10 5 6 19 5 41-2 57 15 10 25 26 28 43l-8-3 9 15-10-2 4 10c-22 0-37 7-53 18-16 11-27 23-46 22-15-2-21-13-29-21-8-9-16-13-26-15l5-5-9-1Z" fill="url(#coat)" stroke="#304d50" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M226 240c5-14 15-29 26-36 4 13 3 30-2 43l-5-9-2 6-5-6-5 5 1-7Z" fill="#c2a7a2"/>
+    <path d="M237 230q6-13 14-19l-8 17 1-6Z" fill="#9e8887"/>
+    <path d="M209 318c20-13 39-20 61-16l-8-5 13 3c-9-8-29-8-40-7 11-5 23-6 30-5-15-8-35-6-50 0-9 4-16 11-18 17Z" fill="#fff9e9"/>
+    <g fill="#314c4e">
+      <path d="M144 289c5 4 11 5 17 2-4 6-13 8-17-2Z"/>
+      <path d="M195 291c11 6 22 1 30-9-3 12-17 21-28 14-2-1-3-3-2-5Z"/>
+    </g>
+    <path d="M194 283q8-6 18-5-10 2-18 5Z" fill="#9fada4"/>
+    <!-- The tail sweeps from the right haunch around the tucked muzzle. -->
+    <path d="M487 308c14 32 2 76-28 103-32 30-79 44-140 46-76 2-147-12-183-44-30-27-39-60-30-90l5 10c-1-16 4-29 13-41 0 18 10 30 26 38l-3-9c15 12 30 20 54 21 36 2 66 4 94 19 17 9 32 13 49 13 61 0 113-26 143-66Z" fill="url(#brush)" stroke="#304d50" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M110 344c7 31 33 57 74 71-24-14-37-26-43-38 21 19 51 31 83 36-27-12-44-24-53-36 37 23 73 30 107 31-40-9-75-27-93-44-24-12-42-15-61-43l3 14-11-10Z" fill="#fffbea"/>
+    <path d="M475 344c-18 36-58 66-114 77l13-8c-32 11-59 16-94 15 57 12 153-6 188-61l-9 6Z" fill="#b7cec6"/>
+    <g fill="#a8bfb6">
+      <path d="M139 388q11 14 30 24-19-7-30-24Zm17 7q11 10 19 14-14-5-19-14Zm35 22q19 10 38 13-20 0-38-13Zm23 3q12 4 24 5-11 1-24-5Z"/>
+      <path d="M283 376q19 10 35 11-17 1-35-11Zm12 11q13 4 24 4-13 3-24-4Zm106 2q16-5 32-17-12 12-32 17Z"/>
+    </g>
+    <path d="M171 339q6-4 17-3c4 0 7 2 5 5-2 4-6 8-10 8s-10-4-13-7q-1-2 1-3Z" fill="#253b40"/>
+    <path d="M174 339q5-2 10-1" fill="none" stroke="#97a9a4" stroke-width="1.5" stroke-linecap="round"/>
+    <g fill="#758d88"><circle cx="163" cy="333" r="1"/><circle cx="168" cy="330" r=".9"/><circle cx="201" cy="331" r="1"/><circle cx="207" cy="328" r="1"/></g>
+  </g>
+</svg>

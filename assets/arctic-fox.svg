@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="560" viewBox="0 0 640 560" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">蜷睡的北極狐</title>
+  <desc id="desc">雪白的北極狐蜷成一團，閉著眼睛，蓬鬆的大尾巴環抱身體，鼻尖輕靠在尾巴上。</desc>
+  <defs>
+    <linearGradient id="fur" x1="240" y1="175" x2="365" y2="436" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#E4EEF4"/>
+    </linearGradient>
+    <linearGradient id="tail" x1="200" y1="310" x2="348" y2="474" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#EDF4F8"/>
+    </linearGradient>
+    <linearGradient id="ear" x1="390" y1="170" x2="400" y2="260" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E2C9D3"/>
+      <stop offset="1" stop-color="#F8E9EC"/>
+    </linearGradient>
+  </defs>
+
+  <!-- A quiet patch of polar sky and snow. -->
+  <circle cx="320" cy="275" r="216" fill="#EFF6F9"/>
+  <path d="M119 382C185 355 242 376 295 366C371 351 445 359 523 391" stroke="#E1ECF2" stroke-width="3" stroke-linecap="round"/>
+  <ellipse cx="323" cy="453" rx="193" ry="23" fill="#DBE8EF"/>
+  <g fill="#FFFFFF">
+    <circle cx="159" cy="226" r="5"/>
+    <circle cx="483" cy="297" r="4"/>
+    <circle cx="285" cy="104" r="4"/>
+    <circle cx="455" cy="162" r="5"/>
+  </g>
+  <g stroke="#CADDE7" stroke-width="3" stroke-linecap="round">
+    <path d="M183 138V154M175 146H191"/>
+    <path d="M505 216V228M499 222H511"/>
+  </g>
+
+  <!-- The rounded back, with a few soft tufts of winter fur. -->
+  <path d="M140 365C115 326 120 265 152 224C188 177 249 161 305 177C345 188 376 214 395 247C425 255 451 282 461 318C476 373 449 419 399 440C345 463 236 458 177 427C150 413 135 390 140 365Z" fill="url(#fur)" stroke="#A9BDC9" stroke-width="3.5" stroke-linejoin="round"/>
+  <path d="M162 242C191 208 230 197 266 204" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/>
+  <path d="M136 314L148 305L144 322M159 227L172 229L169 216" fill="#FFFFFF"/>
+
+  <!-- Far ear and near ear: small, rounded, well insulated. -->
+  <path d="M332 269C316 248 306 217 314 191C335 195 359 214 370 239L332 269Z" fill="#F7FAFC" stroke="#A9BDC9" stroke-width="3.5" stroke-linejoin="round"/>
+  <path d="M331 240C324 227 321 216 322 207C335 214 344 223 349 234L331 240Z" fill="url(#ear)"/>
+  <path d="M375 244C372 210 386 175 408 164C427 184 439 219 429 252L375 244Z" fill="#FFFFFF" stroke="#A9BDC9" stroke-width="3.5" stroke-linejoin="round"/>
+  <path d="M390 232C390 213 397 192 407 183C416 199 420 216 417 235L390 232Z" fill="url(#ear)"/>
+  <path d="M396 231L402 223L406 234L412 226L415 239" fill="#FFFFFF"/>
+
+  <!-- A tucked-in paw, mostly hidden by the tail. -->
+  <path d="M337 368C357 358 390 360 405 375C417 389 404 406 381 408L336 402" fill="#DFEAF1" stroke="#A9BDC9" stroke-width="3" stroke-linecap="round"/>
+  <path d="M380 386L385 396M391 382L397 391" stroke="#B3C6D1" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- The face nestles into the curve of the tail. -->
+  <path d="M319 271C339 242 370 231 402 240C432 247 446 268 446 289L454 300L445 305L457 317L444 320C431 345 413 368 391 380C370 387 351 376 339 360C325 343 306 331 302 309L312 311L305 296L318 298L313 284L324 285Z" fill="#FFFFFF" stroke="#A9BDC9" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M328 318C345 327 351 351 375 361C389 366 408 354 425 339C416 360 405 373 391 380C370 387 351 376 339 360C325 343 313 335 308 320Z" fill="#F0F5F8"/>
+  <ellipse cx="415" cy="321" rx="15" ry="8" transform="rotate(-26 415 321)" fill="#F5DEE3" opacity=".8"/>
+  <path d="M385 304C392 314 402 316 412 308" stroke="#536B7C" stroke-width="4" stroke-linecap="round"/>
+  <path d="M347 291C353 288 360 289 365 292" stroke="#D5E2E9" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- A long, plush tail wraps all the way around the sleeping fox. -->
+  <path d="M169 307C139 325 126 355 135 389C149 440 215 464 287 463C352 463 396 445 418 417C435 396 434 374 421 362C410 352 396 353 385 362C363 381 343 390 318 389C282 388 251 376 231 355C214 336 209 313 214 289L201 298L200 283L188 298L181 288L177 304L169 307Z" fill="url(#tail)" stroke="#A9BDC9" stroke-width="3.5" stroke-linejoin="round"/>
+  <path d="M151 355C146 385 169 414 207 429C257 449 331 443 371 423" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+  <path d="M230 357C249 380 282 395 314 398" stroke="#D7E4EC" stroke-width="3" stroke-linecap="round"/>
+  <path d="M389 365C399 361 410 365 415 375" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Nose resting on the very tip of the tail. -->
+  <path d="M379 360C383 356 391 356 395 359C397 362 391 370 388 370C384 369 377 364 379 360Z" fill="#4C6273"/>
+  <ellipse cx="385" cy="360" rx="2.5" ry="1" fill="#8FA4B3"/>
+  <path d="M387 371C386 376 382 378 378 377" stroke="#718895" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

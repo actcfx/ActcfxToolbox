@@ -8,7 +8,8 @@
         "preview": "astro preview --port 3000",
         "new": "node scripts/new.mjs",
         "astro": "astro",
-        "og": "node scripts/og.mjs"
+        "og": "node scripts/og.mjs",
+        "icons": "node scripts/icons.mjs"
     },
     "dependencies": {
         "@astrojs/svelte": "^9.1.6",

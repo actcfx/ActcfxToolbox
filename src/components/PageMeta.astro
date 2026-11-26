@@ -13,8 +13,8 @@ const { title, description = site.subtitle, image = "/og/site.png" } = Astro.pro
 const abs = (path: string) => (Astro.site ? new URL(path, Astro.site).href : path);
 const url = abs(Astro.url.pathname);
 ---
-<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
-<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <link rel="manifest" href="/site.webmanifest" />
 {description && <meta name="description" content={description} />}

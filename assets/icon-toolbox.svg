@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="24 32 464 464">
+    <!-- Arctic fox nestled in an open tool tote. -->
+    <g stroke="#1f2a44" stroke-width="16" stroke-linejoin="round" stroke-linecap="round">
+        <!-- The tote interior fills the opening behind the fox, from the grip to the front rim. -->
+        <rect x="93" y="173" width="326" height="139" fill="#1f2a44" stroke="none"/>
+        <!-- One bent handle, outlined once. The grip runs behind the head, below the ear tips. -->
+        <path d="M73 278 V179 A26 26 0 0 1 99 153 H413 A26 26 0 0 1 439 179
+            V278 A10 10 0 0 1 419 278 V179 A6 6 0 0 0 413 173
+            H99 A6 6 0 0 0 93 179 V278 A10 10 0 0 1 73 278 Z"
+            fill="#efb72e" stroke-width="12"/>
+
+        <!-- Back: the low ellipse rises gradually into the nape. -->
+        <defs>
+            <clipPath id="below-handle-top">
+                <path d="M0 147 H512 V512 H0 Z"/>
+            </clipPath>
+            <clipPath id="over-grip">
+                <path d="M0 159 H512 V167 H0 Z"/>
+            </clipPath>
+            <clipPath id="below-grip">
+                <path d="M0 147 H512 V159 H0 Z M0 167 H512 V512 H0 Z"/>
+            </clipPath>
+        </defs>
+        <g id="back" transform="translate(9 0)" clip-path="url(#below-handle-top)" stroke="none">
+            <path id="back-shape" d="M86 257 C86 219 109 178 158 159
+                C195 144 229 147 262 158 C305 166 342 182 358 207 C376 231 385 264 376 291
+                C364 323 302 344 228 343 C151 339 86 308 86 257 Z"
+                fill="#f6f7fb"/>
+            <path d="M98 237 Q117 192 172 167 Q153 179 143 191
+                Q150 187 157 185 Q123 206 98 237 Z"
+                fill="#ebe9e6" stroke="none"/>
+        </g>
+        <!-- The back's outline: yellow across the grip's yellow band (so the grip runs up to the fur),
+             dark elsewhere, nothing above the handle. -->
+        <use href="#back-shape" transform="translate(9 0)" fill="none" stroke="#efb72e" clip-path="url(#over-grip)"/>
+        <use href="#back-shape" transform="translate(9 0)" fill="none" clip-path="url(#below-grip)"/>
+
+        <g id="head" transform="translate(107 70) scale(0.705)">
+            <!-- A short contact shadow along the cheek resting on the tail. -->
+            <path d="M422 207 C418 232 387 241 361 257
+                C338 275 312 278 292 267 C322 273 339 263 357 251
+                C381 238 408 229 422 207 Z"
+                fill="#dce0e4" stroke="none"/>
+            <path d="M243 132 C247 116 250 93 259 72 Q262 64 268 69
+                C279 77 290 93 299 105 Q328 98 351 109
+                C361 96 371 80 381 73 Q386 69 389 77
+                C396 95 401 118 399 135
+                C404 156 427 175 427 197 C427 222 399 234 374 246
+                C353 256 343 271 319 271 C296 271 284 258 264 249
+                C237 237 207 228 207 202 C207 177 234 153 243 132 Z"
+                fill="#f6f7fb" stroke="none"/>
+            <path d="M243 132 C247 116 250 93 259 72 Q262 64 268 69
+                C279 77 290 93 299 105 Q328 98 351 109
+                C361 96 371 80 381 73 Q386 69 389 77
+                C396 95 401 118 399 135 Q398 142 394 147"
+                fill="none" stroke="#c9ced8" stroke-width="5"/>
+            <!-- Dark inner ears leave a rim of white fur around the tips. -->
+            <path d="M251 117 Q255 95 263 82 Q265 78 268 82
+                Q276 88 282 99 Q272 92 268 96 Q260 102 251 117 Z
+                M391 122 Q392 102 385 86 Q384 82 381 85
+                Q372 92 366 105 Q377 96 381 99 Q387 105 391 122 Z"
+                fill="#22242a" stroke="none"/>
+            <path d="M244 129 C237 153 210 178 210 202 Q210 222 234 236
+                C217 230 205 218 205 202 C205 176 234 152 244 129 Z"
+                fill="#c9ced8" stroke="none"/>
+        </g>
+
+        <!-- The eyes and muzzle tilt 3 degrees clockwise around the nose. -->
+        <g id="face" transform="matrix(0.704034 0.036897 -0.036897 0.704034 118.529525 52.582140)">
+            <g transform="translate(-2.84 -7.09) rotate(2 316 238)">
+                <!-- The inner corners dip toward a low nose on a tapered muzzle. -->
+                <path d="M260 215 Q274 204 289 212 Q298 217 299 226
+                    Q286 215 278 215 Q270 213 260 215 Z
+                    M372 215 Q358 204 343 212 Q334 217 333 226
+                    Q346 215 354 215 Q362 213 372 215 Z"
+                    fill="#e7e5e6" stroke="none"/>
+                <path d="M262 215 Q275 210 286 215 Q296 220 297 227
+                    Q289 222 283 220 Q274 216 262 215 Z
+                    M370 215 Q357 210 346 215 Q336 220 335 227
+                    Q343 222 349 220 Q358 216 370 215 Z"
+                    fill="#1f2a44" stroke="none"/>
+                <!-- Paired shadows model the short muzzle around a light bridge. -->
+                <defs>
+                    <linearGradient id="muzzle-shadow" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+                        <stop stop-color="#c9ced8" stop-opacity="0.20"/>
+                        <stop offset="1" stop-color="#aeb6c6" stop-opacity="0.75"/>
+                    </linearGradient>
+                </defs>
+                <path d="M287 218 Q296 221 300 227 C306 233 305 243 312 252
+                    C301 249 293 238 287 218 Z
+                    M345 218 Q336 221 332 227 C326 233 327 243 320 252
+                    C331 249 339 238 345 218 Z" fill="url(#muzzle-shadow)" stroke="none"/>
+                <path d="M303 252 C303 240 329 240 329 252
+                    C329 258 321 263 316 263 C311 263 303 258 303 252 Z"
+                    fill="#1f2a44" stroke="none"/>
+                <path d="M316 262 V266 M306 264 Q316 270 326 264"
+                    fill="none" stroke-width="4"/>
+            </g>
+        </g>
+
+        <!-- The straight handle legs sit in front of the fur and meet the rim. -->
+        <path d="M73 185 H93 V320 H73 Z M419 185 H439 V320 H419 Z"
+            fill="#efb72e" stroke="none"/>
+        <path d="M73 185 V320 M93 185 V320 M419 185 V320 M439 185 V320"
+            fill="none" stroke-width="12"/>
+
+        <!-- The rounded flank overlaps the inner edge of the post. -->
+        <path d="M160.58 170.51 C124.58 187.93 90 219 90 248
+            C90 272 103 289 123 303 H169 V170.51 Z" fill="#f6f7fb" stroke="none"/>
+
+        <!-- The brush settles against the inside of the front wall; the rim
+             covers its underside and the tapered tip points down to the right. -->
+        <g id="tail" transform="translate(9 0)">
+            <path d="M151 279 C160 260 181 250 203 251
+                C239 252 276 257 302 261 C322 264 329 284 339 297
+                C310 299 275 309 234 314 C195 320 164 313 154 297
+                Q147 287 151 279 Z" fill="#fafafc" stroke="none"/>
+            <path d="M153 275 C165 253 184 246 204 247
+                C241 248 275 253 302 257 C323 259 329 281 339 297
+                C325 280 319 266 301 263 C275 259 236 256 203 255
+                C183 254 166 260 153 275 Z" fill="#aeb6c6" stroke="none"/>
+        </g>
+
+        <!-- Raised front wall covers the lower curves of all three layers. -->
+        <path d="M65 306 H447 V426 Q447 446 427 446 H85
+            Q65 446 65 426 Z" fill="#e9a90f"/>
+    </g>
+</svg>

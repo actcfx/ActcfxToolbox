@@ -10,6 +10,7 @@
 | `npm run build` | 建置到 `dist/` |
 | `npm run preview` | 預覽 `dist/` 的建置結果 |
 | `npm run new <slug> [標題]` | 建立新頁面骨架 `src/pages/<slug>/` |
+| `npm run icons` | 從 `assets/icon.svg` 重新產生網站圖示 |
 | `npm run og` | 重新截取連結預覽圖 `public/og/*.png`（頁面最上方的內容改了之後執行） |
 
 ## 本機留言工具
@@ -22,7 +23,7 @@
 
 ## 網站圖示與連結預覽
 
-- 原圖在 `assets/avatar.jpg`。網站圖示（`public/favicon.ico`、`apple-touch-icon.png`、`icon-192.png`、`icon-512.png`）是從臉部裁切產生的，`public/site.webmanifest` 列出這些圖示。
+- 網站圖示的原始檔是 `assets/icon.svg`（照狐狸 emoji 的形狀畫的北極狐頭：寬耳朵、往外翹的臉頰毛，全白，只有深色的外框、眼睛和鼻子；透明背景）。改了之後執行 `npm run icons`，會產生 `public/favicon.svg`、`favicon.ico`（16、32、48px）和主畫面用的 `apple-touch-icon.png`、`icon-192.png`、`icon-512.png`（淺灰底滿版方形，系統會自己裁成圓角）。`public/site.webmanifest` 列出這些圖示。
 - 連結預覽圖（Open Graph，1200×630）由 `npm run og` 產生：先建置網站，再用 Chromium 截取每個網頁最上方 1200×630 的畫面（深色模式）。首頁是 `public/og/site.png`（404 也用這張），每個頁面是 `public/og/<slug>.png`。這些圖會進 git，因為 Cloudflare 建置時沒有瀏覽器可以產生它們。改了頁面最上方的內容後，記得重跑。
 - `npm run og` 需要 Playwright 的 Chromium，第一次先跑 `npx playwright install chromium`。
 - 各頁面的 `<head>` 標籤由 `src/components/PageMeta.astro` 產生。預覽圖要完整網址，網域設定在 `astro.config.mjs` 的 `site`（`https://tool.actcfx.net`）。
@@ -85,13 +86,18 @@ src/pages/<slug>/index.astro   各頁面（建置成 dist/<slug>/index.html）
 src/pages/<slug>/_meta.json    首頁卡片資訊
 src/pages/index.astro、404.astro  首頁、404
 src/layouts/                   共用版型
+src/components/                共用元件（PageMeta.astro：圖示與連結預覽標籤）
 src/styles/                    共用樣式
 src/data/                      頁面資料（JSON）
-public/                        原封不動複製的檔案（需要時再建）
+public/                        原封不動複製的檔案：網站圖示、site.webmanifest、og/ 預覽圖
+assets/icon.svg                網站圖示的原始檔
+assets/icon-toolbox.svg        舊版圖示（北極狐趴在工具提箱裡），留著備用，不會被 npm run icons 使用
 site.json                      網站名稱與副標
 astro.config.mjs               Astro 設定
 dev/                           本機留言工具（只在 npm run dev 時使用）
 scripts/new.mjs                建立新頁面
+scripts/icons.mjs              從 assets/icon.svg 產生網站圖示
+scripts/og.mjs                 截取連結預覽圖
 worker/                        （選用）後端 API
 wrangler.toml                  Cloudflare 部署設定
 ```

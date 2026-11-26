@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -14 143 143">
+    <!-- Arctic fox head, shaped after the fox emoji: wide ears, cheek tufts that stick out past the head,
+         all white, with only the dark outline, eyes and nose.
+         Dark outline and a transparent background. -->
+    <g stroke-linejoin="round" stroke-linecap="round">
+        <path d="M63.5 22 L44 22 L4 0 L0 6 L1 18 L4 30 L8 42 L13 51 L10 60 L14 62 L9 70 L4 84 L13 86 L12 90 L35 92 L46 106 L53 112 L63.5 113 L74 112 L81 106 L92 92 L115 90 L114 86 L123 84 L118 70 L113 62 L117 60 L114 51 L119 42 L123 30 L126 18 L127 6 L123 0 L83 22 Z" fill="#1f2a44" stroke="#1f2a44" stroke-width="9"/>
+        <path d="M63.5 22 L44 22 L4 0 L0 6 L1 18 L4 30 L8 42 L13 51 L10 60 L14 62 L9 70 L4 84 L13 86 L12 90 L35 92 L46 106 L53 112 L63.5 113 L74 112 L81 106 L92 92 L115 90 L114 86 L123 84 L118 70 L113 62 L117 60 L114 51 L119 42 L123 30 L126 18 L127 6 L123 0 L83 22 Z" fill="#ffffff"/>
+        <ellipse cx="44" cy="55" rx="4.6" ry="7" fill="#1f2a44"/>
+        <ellipse cx="83" cy="55" rx="4.6" ry="7" fill="#1f2a44"/>
+        <path d="M55 92 L72 92 L63.5 104 Z" fill="#1f2a44" stroke="#1f2a44" stroke-width="3"/>
+    </g>
+</svg>
